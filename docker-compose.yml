@@ -13,6 +13,7 @@ services:
       - "8094:8094"
       - "8125:8125/udp"
   # Define an InfluxDB service
+ 
   influxdb:
     image: influxdb
     volumes:
@@ -20,6 +21,7 @@ services:
     ports:
       - "8086:8086"
   # Define a Chronograf service
+ 
   chronograf:
     image: chronograf
     environment:
@@ -31,6 +33,7 @@ services:
       - influxdb
       - kapacitor
   # Define a Kapacitor service
+
   kapacitor:
     image: kapacitor
     environment:
@@ -41,6 +44,7 @@ services:
     ports:
       - "9092:9092"
   # Define a grafana service
+
   grafana:
     image: grafana/grafana:latest
     ports:
